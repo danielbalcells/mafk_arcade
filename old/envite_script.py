@@ -1,11 +1,34 @@
 import csv
 import smtplib
+import random
 
 
 PLAYERS_FILENAME = 'players.csv'
 
 
 CARDS_PER_HAND = 3
+
+
+SUITS = [
+    'Oros',
+    'Copas',
+    'Espadas',
+    'Bastos',
+]
+
+
+NUMBERS = [
+    'As',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    'Sota',
+    'Caballo',
+    'Rey',
+]
 
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -22,7 +45,23 @@ def init_server():
     return server
 
 
+def create_deck():
+    return [f'{number} de {suit}' for number in NUMBERS for suit in SUITS]
+
+
+def shuffle(deck):
+    return random.sample(deck, len(deck))
+
+
+def draw(deck, n_cards=1):
+    result = []
+    for i in range(n_cards):
+        result.append(deck.pop(0))
+    return result
+
+
 def load_players(filename=PLAYERS_FILENAME):
+    players = []
     with open(filename) as f:
         reader = csv.DictReader(f)
         return list(reader)
