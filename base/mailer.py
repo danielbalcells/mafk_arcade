@@ -3,7 +3,7 @@ import smtplib
 
 HOST = 'smtp.gmail.com'
 PORT = 465 
-FROM_ADDR = 'your@email.com'
+FROM_ADDR = 'dbalcells@gmail.com'
 PASSWORD = 'password'
 
 

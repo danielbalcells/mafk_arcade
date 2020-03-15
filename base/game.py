@@ -28,6 +28,9 @@ class BaseGame(object):
             hand = Hand(self.deck.draw(self.cards_per_hand))
             player.set_hand(hand)
 
+    def get_players_by_card(self, card):
+        return [p for p in self.players if card in p.hand.cards]
+
     def notify_players(self, extra_message=''):
         for player in self.players:
             player.notify(self.mailer, extra_message)

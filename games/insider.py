@@ -16,6 +16,16 @@ class Insider(BaseGame):
         self.deal_hands()
         self.notify_players()
 
+    def notify_players(self):
+        insider = self.get_players_by_card(self.deck.insider_str)[0]
+        master = self.get_players_by_card(self.deck.master_str)[0]
+        for player in self.players:
+            if player is master:
+                insider_message = f'Insider: {insider.name} - {insider.email}'
+                player.notify(self.mailer, insider_message)
+            else:
+                player.notify(self.mailer)
+
 
 class InsiderDeck(BaseDeck):
 
