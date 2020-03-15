@@ -1,8 +1,8 @@
 import argparse
 
-from game.politico import Politico
-from game.insider import Insider
-from game.envite import Envite
+from games.politico import Politico
+from games.insider import Insider
+from games.envite import Envite
 
 
 OPT_POLITICO = 'politico'

@@ -1,8 +1,8 @@
 import csv
 
-from player import Player
-from mailer import Mailer
-from hand import Hand
+from .player import Player
+from .mailer import Mailer
+from .hand import Hand
 
 
 class BaseGame(object):

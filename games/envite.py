@@ -1,5 +1,5 @@
-from .game import BaseGame
-from deck.naipes_deck import NaipesDeck
+from base.game import BaseGame
+from base.deck import NaipesDeck
 
 
 class Envite(BaseGame):
